@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MCC_Android.MainPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#162337"
+            
+            >
+
+    <ContentPage Title="История" IconImageSource="history_white.png" BackgroundColor="#162337">
+        <ContentPage.Content>
+            <ScrollView>
+                <StackLayout>
+                    <Button Text="Обновить историю" Clicked="Button_Clicked_3" Margin="30,0,30,5" x:Name="HistButton" IsVisible="false"/>
+                    <Label Text="Войдите в аккаунт для просмотра истории" FontAttributes="Bold" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,15" x:Name="HistLabel"/>
+                    <ListView x:Name="HistList" >
+                        
+                        
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Поиск" IconImageSource="music_white.png" BackgroundColor="#162337">
+        <ContentPage.Content>
+
+            <StackLayout>
+
+                <StackLayout Spacing="1" BackgroundColor="#00a0e4">
+                    <Image Source="logo_white_150x.png" Margin="0,15,0,15"/>
+                    <Label Text="Выбор музыкальной" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="Label1"/>
+                    <Label Text="композиции"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,10" x:Name="Label2"/>
+
+                    <Grid Margin="0,0,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Spacing="1">
+                            <Image Source="folder_white.png" Margin="130,0,0,0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="ImageFile_Clicked"
+                                        NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Файл"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="130,0,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Spacing="1">
+                            <Image Source="mic_white.png" Margin="0,0,130,0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="ImageMic_Clicked"
+                                        NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Запись"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,130,0"/>
+                        </StackLayout>
+
+                    </Grid>
+                    <Label Text="Проверить" FontAttributes="Bold" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,15">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                        Tapped="CheckCopyright"
+                                        NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+                <ScrollView>
+
+                    <StackLayout>
+                        <StackLayout>
+
+                            <Image Source="Copyright_200px.png" Margin="0,30,0,30" x:Name="PictureBox1"/>
+                            <Label Text="" FontSize="Large" x:Name="LabelResult" IsVisible="false" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,10"/>
+
+                        </StackLayout>
+                        <StackLayout IsVisible="false" x:Name="InfLayout">
+                            <Label Text="Наименование оригинала композиции:" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,1"/>
+                            <Label Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,20" x:Name="InfTitle"/>
+                            <Label Text="Автор композиции:" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,1"/>
+                            <Label Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,20" x:Name="InfArtist"/>
+                            <Label Text="Альбом:" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,1"/>
+                            <Label Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,20" x:Name="InfAlbum"/>
+                            <Label Text="Дата релиза:" FontSize="Medium" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,1"/>
+                            <Label Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,20" x:Name="InfDate"/>
+                            <Label LineBreakMode="WordWrap" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,0,0,20">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Apple Music" FontSize="Large" x:Name ="infApple" TextColor="White" >
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Handle_Tapped" />
+                                            </Span.GestureRecognizers>
+                                        </Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label LineBreakMode="WordWrap" IsVisible="false">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Spotify" FontSize="Large" x:Name ="infSpotify">
+                                            <Span.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Handle_Tapped" />
+                                            </Span.GestureRecognizers>
+                                        </Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+
+                </ScrollView>
+
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Настройки" IconImageSource="settings_white.png" BackgroundColor="#162337">
+        <ContentPage.Content>
+            <ScrollView>
+                <StackLayout Spacing="1" BackgroundColor="#00a0e4">
+
+                    <Label Text="Авторизация" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0,10,0,1" x:Name="Auth"/>
+                    <Button Text="Выйти" Clicked="Button_Clicked_2" Margin="30,0,30,30" IsVisible="false" x:Name="Exit"/>
+
+                    <StackLayout x:Name="AuthPanel">
+                        <Entry Keyboard="Default" Placeholder="Псевдоним" x:Name="Login" Margin="30,0,30,0"/>
+
+                        <Entry Keyboard="Default" Placeholder="Пароль" x:Name="Pass" Margin="30,0,30,0"/>
+                        <Button Text="Войти в аккаунт" Clicked="Button_Clicked" Margin="30,0,30,0"/>
+                        <Button Text="Зарегестрироваться" Clicked="Button_Clicked_1" Margin="30,0,30,30"/>
+                    </StackLayout>
+                    <Entry Keyboard="Default"
+       Placeholder="IP Сервера"
+       VerticalOptions="CenterAndExpand" Margin="30,0,30,0" x:Name="IP" Text="26.161.162.158"/>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>
+
+</TabbedPage>

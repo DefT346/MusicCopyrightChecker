@@ -1,0 +1,10 @@
+C:\Users\mayorov\Desktop\Коммит\MCCServer\bin\Debug\MCCServer.exe.config
+C:\Users\mayorov\Desktop\Коммит\MCCServer\bin\Debug\MCCServer.exe
+C:\Users\mayorov\Desktop\Коммит\MCCServer\bin\Debug\MCCServer.pdb
+C:\Users\mayorov\Desktop\Коммит\MCCServer\obj\Debug\MCCServer.csprojAssemblyReference.cache
+C:\Users\mayorov\Desktop\Коммит\MCCServer\obj\Debug\MCCServer.Form1.resources
+C:\Users\mayorov\Desktop\Коммит\MCCServer\obj\Debug\MCCServer.Properties.Resources.resources
+C:\Users\mayorov\Desktop\Коммит\MCCServer\obj\Debug\MCCServer.csproj.GenerateResource.cache
+C:\Users\mayorov\Desktop\Коммит\MCCServer\obj\Debug\MCCServer.csproj.CoreCompileInputs.cache
+C:\Users\mayorov\Desktop\Коммит\MCCServer\obj\Debug\MCCServer.exe
+C:\Users\mayorov\Desktop\Коммит\MCCServer\obj\Debug\MCCServer.pdb
